@@ -1,48 +1,30 @@
 #include <stdio.h>
-#include <stdlib.h>
 /**
- *main - main block
- *Description: Write a program that prints all possible
- *different combinations of two digits
- *Return: 0
+ *main -> assign a random number to the variable n each time it is executed
+ *and print the last digit of the number stored in the variable n
+ *Return: Always 0 (Success)
  */
 int main(void)
 {
-int c;
-int d;
-int e;
-int f = 0;
-while (f < 10)
+int i, j;
+for (i = 0; i < 100; i++)
 {
-e = 0;
-while (e < 10)
+for (j = 0; j < 100; j++)
 {
-d = 0;
-while (d < 10)
+if (i < j)
 {
-c = 0;
-while (c < 10)
-{
-if (!(f == c && e == d))
-{
-putchar('0' + f);
-putchar('0' + e);
+putchar((i / 10) + 48);
+putchar((i % 10) + 48);
 putchar(' ');
-putchar('0' + d);
-putchar('0' + c);
-if (!(f + e == 18 && c + d == 17 && d == 9))
+putchar((j / 10) + 48);
+putchar((j % 10) + 48);
+if (i != 98 || j != 99)
 {
 putchar(',');
 putchar(' ');
 }
 }
-c++;
 }
-d++;
-}
-e++;
-}
-f++;
 }
 putchar('\n');
 return (0);
